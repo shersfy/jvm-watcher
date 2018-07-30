@@ -1,0 +1,20 @@
+.charts-area {
+	width: 1900px;
+	float: left;
+}
+
+.echarts, .echarts-long {
+	margin: 10px;
+	width: 455px;
+	height: 400px;
+	background-color: #FFF;
+	display: inline-block;
+}
+
+.echarts-long {
+	width: 930px;
+}
+
+.echarts-right {
+	float: right;
+}

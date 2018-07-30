@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link href="css/echarts.css" rel="stylesheet" />
+<script src="libs/echarts.min.js" type="text/javascript"></script>
+</head>
+<body index="4">
+	<div id="memoChart" class="echarts" th:memo="${memo}"></div>
+	<div id="cpuChart" class="echarts" th:cpu="${cpu}"></div>
+	<div id="" class="echarts" ></div>
+	<div id="" class="echarts" ></div>
+	<div id="" class="echarts" ></div>
+	<script src="js/capacity.js"></script>
+</body>
+</html>

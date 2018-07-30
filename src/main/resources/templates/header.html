@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" th:href="|${basePath}/css/header.css|">
+<script th:inline="javascript">
+    var basePath = [[${basePath}]];
+</script>
+</head>
+<body>
+	<div class="box">
+		
+		<ul class="f-nav" id='f-nav'>
+			<li th:href="|${basePath}/system|"><div style="width: 64px; height:64px;float: left; background-image: url('imgs/jw.png');"></div>首页</li>
+			<li th:href="|${basePath}/jvm|">JVM参数</li>
+			<li th:href="|${basePath}/process|">JVM本地</li>
+			<li th:href="|${basePath}/remote|">JVM远程</li>
+			<li th:href="|${basePath}/capacity|">综合性能</li>
+			<div class='sideline'></div>
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf8" th:src="|${basePath}/js/nav.js|"></script>
+	<script type="text/javascript" charset="utf8" th:src="|${basePath}/js/header.js|"></script>
+</body>
+</html>

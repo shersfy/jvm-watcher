@@ -1,0 +1,22 @@
+body {
+	margin: 0;
+	padding: 0;
+	font: 12px/17px Arial, sans-serif;
+	background: #f9f9f9;
+}
+a {
+	text-decoration: none;
+	color: blue;
+}
+hr {
+	height:2px;
+	border:none;
+	border-top:2px dotted #185598;
+}
+table {
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+}
+.dataTables_wrapper{
+	margin-top: 10px;
+}

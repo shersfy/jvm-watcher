@@ -1,0 +1,69 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>错误提示</title>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<link href="imgs/logo.png" rel="icon" type="image/x-icon" />
+<link href="css/error.css" rel="stylesheet" />
+
+<meta content="mshtml 6.00.2900.2523" name=generator>
+</head>
+<body>
+	<table style="width: 100%;height: 95%;">
+		<tbody>
+			<tr valign=center align=middle>
+				<td>
+					<table width="468" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+						<tbody>
+							<tr>
+								<td width=20 background="images/rbox_1.gif" height=20></td>
+								<td width=108 background="images/rbox_2.gif" height=20></td>
+								<td width=56><img height=20 src="images/rbox_ring.gif"
+									width=56></td>
+								<td width=100 background="images/rbox_2.gif"></td>
+								<td width=56><img height=20 src="images/rbox_ring.gif"
+									width=56></td>
+								<td width=108 background="images/rbox_2.gif"></td>
+								<td width=20 background="images/rbox_3.gif" height=20></td>
+							</tr>
+							<tr>
+								<td align=left background="images/rbox_4.gif" rowspan=2></td>
+								<td align=middle bgcolor=#eeeeee colspan=5 height=50>
+									<p>
+										<strong>系统错误提示<br> <br>
+										</strong>
+									</p>
+								</td>
+								<td align=left background="images/rbox_6.gif" rowspan=2></td>
+							</tr>
+							<tr>
+								<td align=left colspan=5 height=80>
+									<p align=center>
+									<p id=lid2 th:text="|status: ${status}|"></p>
+									<p id=lid2 th:text="|error: ${error}|"></p>
+									<p id=lid2 th:text="|time: ${#dates.format(timestamp, 'yyyy-MM-dd HH:mm:ss.SSS')}|"></p>
+									<p id=lid2>错误详情：</p>
+									<ul>
+										<li id=list2 th:text="${#httpServletRequest.getParameter('message')}"></li>
+										<li id=list2 th:text="${exception}"></li>
+										<li id=list2 th:text="${trace}"></li>
+										<li id=list2 th:text="${path}"></li>
+										<li id=list2 th:text="${#httpServletRequest.getParameter('trace')}"></li>
+									</ul>
+									<div align=right>转到 <a th:href="${basePath}" style="font-size: 16px;">主页</a></div>
+									<div align=right>单击 <a href="javascript:history.back(1)" style="font-size: 16px;">后退</a></div>
+								</td>
+							</tr>
+							<tr>
+								<td align=left background="images/rbox_7.gif" height=20></td>
+								<td align=left background="images/rbox_8.gif" colspan=5
+									height=20></td>
+								<td align=left background="images/rbox_9.gif" height=20></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

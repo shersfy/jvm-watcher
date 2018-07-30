@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"  href="libs/datatables/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery-easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery-easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="css/watcher_rmi.css">
+
+<script type="text/javascript" charset="utf8" src="libs/datatables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="libs/jquery-easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/process.js"></script>
+<script type="text/javascript" src="js/watcher_rmi.js"></script>
+
+</head>
+<body index="5">
+  <div class="easyui-panel" title="JVM远程连接" style="width:100%; padding-left: 20px;padding-right: 20%; padding-top: 20px;">
+      <form id="ff" method="post">
+          <div style="margin-bottom:20px">
+          	   JMX RMI URI(远程JMX连接URL)<br/>
+              <input class="easyui-textbox" id="url" name="url" style="width:50%" 
+              	data-options="required:true" value="service:jmx:rmi:///jndi/rmi://127.0.0.1:8899/jmxrmi"/>
+          </div>
+      </form>
+      <div style="text-align:left;padding:5px 0">
+          <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()" style="width:80px">连接</a>
+          <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width:80px">清除</a>
+      </div>
+  </div>
+      <table id="watcher-rmi" class="display">
+	    <thead>
+	        <tr>
+	            <th align="left">JVM远程监视</th>
+	            <th>&nbsp;</th>
+	            <th>&nbsp;</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr style="font-weight: bold;">
+	            <td width="10%">已监视</td>
+	            <td width="20%">主机端口</td>
+	            <td>RMI URL</td>
+	        </tr>
+			<tr class="rmi-records rmi-url" th:each="c : ${connectors}" th:url="${c.url}">
+				<td><div th:style="|height:20px; background-image: url('imgs/${c.enable?'ok.png':'no.png'}');background-repeat: no-repeat;|"></div></td>
+				<td><div th:text="${c.runtimeMXBean.vmName}" /></td>
+				<td><div th:text="${c.url}" /></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,160 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	text-align: center;
+	font-size: 16px;
+	margin-top: 0px;
+}
+.box {
+	background-color: #202932;
+	margin: 0px 0px;
+}
+.f-nav {
+	height: 60px;
+	overflow: hidden;
+	transition: all 1s;
+	display: block;
+	position: relative;
+	padding: 0;
+	box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+	background-color: #202932;
+	font-size: 16px;
+    font-weight: bold;
+}
+.f-nav li {
+	padding: 0;
+	margin: 0;
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	position: relative;
+	z-index: 100;
+	display: inline-block;
+	list-style-type: none;
+	width: 100px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+.sideline {
+	position: absolute;
+	background-color: #208ff9;
+	left: 0;
+	top: 0;
+	color: #fff;
+	min-height: 30px;
+	z-index: 1;
+	height: 60px;
+	line-height: 60px;
+	display: inline-block;
+	list-style-type: none;
+	width: 100px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+.f-nav li.active {
+	background-color: #208ff9;
+	color: #fff;
+}
+.f-nav li.fontNav {
+	background-color: #208ff9;
+	color: #fff;
+	animation: fontNav .8s;
+}
+.f-nav li.downNav {
+	background-color: #208ff9;
+	color: #fff;
+	animation: downNav .8s;
+}
+.f-nav li.leftNav {
+	background-color: #208ff9;
+	color: #fff;
+	animation: leftNav .8s;
+}
+.f-nav li.rightNav {
+	background-color: #208ff9;
+	color: #fff;
+	animation: rightNav .8s;
+}
+/*左边缘*/
+.f-nav li.edgeLeft {
+	background-color: #208ff9;
+	color: #fff;
+	animation: edgeLeft .8s;
+}
+/*右边缘*/
+.f-nav li.edgeRight {
+	background-color: #208ff9;
+	color: #fff;
+	animation: edgeRight .8s;
+}
+/*从中间变大*/
+.f-nav li.scaleChange {
+	background-color: #208ff9;
+	color: #fff;
+	animation: scaleChange .8s;
+}
+ @keyframes scaleChange {
+ 0% {
+ transform: scale(0);
+},  50% {
+ transform: scale(.5);
+},  100% {
+ transform: scale(1);
+}
+}
+ @keyframes fontNav {
+ 0% {
+ transform: translate(0, -100%);
+},  50% {
+ transform: translate(0, -50%);
+},  100% {
+ transform: translate(0, 0);
+}
+}
+ @keyframes downNav {
+ 0% {
+ transform: translate(0, 100%);
+},  50% {
+ transform: translate(0, 50%);
+},  100% {
+ transform: translate(0, 0);
+}
+}
+ @keyframes leftNav {
+ 0% {
+ transform: translate(-100%, 0%);
+},  50% {
+ transform: translate(-50%, 0%);
+},  100% {
+ transform: translate(0, 0);
+}
+}
+ @keyframes rightNav {
+ 0% {
+ transform: translate(100%, 0%);
+},  50% {
+ transform: translate(50%, 0%);
+},  100% {
+ transform: translate(0%, 0);
+}
+}
+ @keyframes edgeLeft {
+ 0% {
+ transform: translate(-100%, -100%);
+}
+ 100% {
+ transform: translate(0%, 0%);
+}
+}
+ @keyframes edgeRight {
+ 0% {
+ transform: translate(100%, 100%);
+}
+ 100% {
+ transform: translate(0%, 0%);
+}
+}

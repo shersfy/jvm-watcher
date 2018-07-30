@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"  href="libs/datatables/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="libs/datatables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/system.js"></script>
+</head>
+<body index="1">
+	<table id="system" class="display">
+	    <thead>
+	        <tr>
+	            <th align="left">系统信息</th>
+	            <th>&nbsp;</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	            <td width="20%">操作系统</td>
+	            <td th:text="${system.os}"></td>
+	        </tr>
+	        <tr>
+	            <td>计算机名称</td>
+	            <td th:text="${system.name}"></td>
+	        </tr>
+	        <tr>
+	            <td>IP地址</td>
+	            <td th:text="${system.ip}"></td>
+	        </tr>
+	        <tr>
+	            <td>CPU</td>
+	            <td th:text="${system.cpu}"></td>
+	        </tr>
+	        <tr>
+	            <td>内存</td>
+	            <td th:text="${system.ram}"></td>
+	        </tr>
+	        <tr>
+	            <td>硬盘</td>
+	            <td th:text="${system.disksSize}"></td>
+	        </tr>
+	        <tr th:each="disk: ${system.disks}">
+	            <td th:text="${disk.name}"></td>
+	            <td th:text="|${disk.type}, ${disk.fileSystem}, Total ${disk.totalStr}, Used ${disk.usedStr} ${disk.usedPercent}|"></td>
+	        </tr>
+	    </tbody>
+	</table>
+</body>
+</html>

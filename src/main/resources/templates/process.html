@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"  href="libs/datatables/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery-easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="libs/jquery-easyui/themes/icon.css">
+
+<script type="text/javascript" charset="utf8" src="libs/datatables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="libs/jquery-easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/process.js"></script>
+<style type="text/css">
+#process_filter {
+	float: left;
+	margin-left: 20px;
+}
+</style>
+</head>
+<body index="3">
+	<table id="process" class="display">
+	    <thead>
+	        <tr>
+	            <th align="left">JVM本地进程</th>
+	            <th>&nbsp;</th>
+	            <th>&nbsp;</th>
+	            <th>&nbsp;</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr style="font-weight: bold;">
+	            <td width="10%">PID</td>
+	            <td width="10%">已监视</td>
+	            <td width="30%">主程序</td>
+	            <td>可执行程序</td>
+	        </tr>
+	        <tr th:each="process: ${processes}">
+	            <td><a class="jvm-process" href="javascript:void(0);" th:text="${process.pid}" title="创建监视连接"></a></td>
+	            <td><div th:style="|height:20px; background-image: url('imgs/${process.watch?'ok.png':'no.png'}');background-repeat: no-repeat;|"></div></td>
+	            <td th:text="${process.name}"></td>
+	            <td th:text="${process.exePath}"></td>
+	        </tr>
+	    </tbody>
+	</table>
+</body>
+</html>

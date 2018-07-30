@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"  href="libs/datatables/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="libs/datatables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/jvm.js"></script>
+</head>
+<body index="2">
+	<table id="jvm" class="display">
+	    <thead>
+	        <tr>
+	            <th align="left">JVM信息</th>
+	            <th>&nbsp;</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	            <td>Java 供应商</td>
+	            <td><a target="_blank" th:href="${jvm.javaVendorUrl}" th:text="${jvm.javaVendor}"></a></td>
+	        </tr>
+	        <tr>
+	            <td width="20%">Java 版本</td>
+	            <td th:text="${jvm.javaVersion}"></td>
+	        </tr>
+	        <tr>
+	            <td>Java Home</td>
+	            <td th:text="${jvm.javaHome}"></td>
+	        </tr>
+	        <tr>
+	            <td>处理器数</td>
+	            <td th:text="${jvm.processors}"></td>
+	        </tr>
+	        <tr>
+	            <td>初始内存(-Xms)</td>
+	            <td th:text="${jvm.init}"></td>
+	        </tr>
+	        <tr>
+	            <td>最大内存(-Xmx)</td>
+	            <td th:text="${jvm.max}"></td>
+	        </tr>
+	        <tr>
+	            <td>当前内存</td>
+	            <td th:text="${jvm.total}"></td>
+	        </tr>
+	        <tr>
+	            <td>空闲内存</td>
+	            <td th:text="${jvm.free}"></td>
+	        </tr>
+	        <tr>
+	            <td>已使用</td>
+	            <td th:text="${jvm.used}"></td>
+	        </tr>
+	    </tbody>
+	</table>
+</body>
+</html>
