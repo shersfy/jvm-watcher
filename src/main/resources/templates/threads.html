@@ -19,17 +19,23 @@
    	$(function() {
 	     $("#json").JSONView(json);
 	     // $("#json-collapsed").JSONView(json, { collapsed: true, nl2br: true, recursive_collapser: true });
-	     $('#collapse-btn').on('click', function() {
-	       $('#json').JSONView('collapse');
-	     });
 	     $('#expand-btn').on('click', function() {
 	       $('#json').JSONView('expand');
 	     });
 	     /* 
+	     $('#collapse-btn').on('click', function() {
+	       $('#json').JSONView('collapse');
+	     });
 	     $('#toggle-btn').on('click', function() {
 	       $('#json').JSONView('toggle');
 	     });
 	      */
+	     $('.toggle-level').each(function(index){
+    	    $(this).on('click', function(){
+    	    	$('#json').JSONView('toggle', $(this).attr("id"));
+    	    });
+	    });
+
    });
 </script>
 
@@ -39,7 +45,12 @@
 	<div class="easyui-panel">
 		<div style="margin-left: 20px;">
 		  	<button id="expand-btn"   class="easyui-menubutton " data-options="iconCls:'icon-add'">展开</button>
-		  	<button id="collapse-btn" class="easyui-menubutton" data-options="iconCls:'icon-remove'">折叠</button>
+		  	<button class="easyui-menubutton" data-options="menu:'#mm1',iconCls:'icon-remove'">折叠</button>
+		</div>
+		<div id="mm1" style="width:150px;">
+			<div id="1" class="toggle-level">Level 1</div>
+			<div id="2" class="toggle-level">Level 2</div>
+			<div id="3" class="toggle-level">Level 3</div>
 		</div>
 	</div>
 	<div class="easyui-panel" title="Threads" style="height:800px;padding:10px;" data-options="iconCls:'icon-tip'">
