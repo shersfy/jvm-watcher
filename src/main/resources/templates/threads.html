@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Threads</title>
+
+<meta charset="UTF-8" />
+
+<link rel="stylesheet" type="text/css" th:href="|${basePath}/css/main.css|">
+<link rel="stylesheet" type="text/css" th:href="|${basePath}/libs/jsonview/jquery.jsonview.css|">
+<link rel="stylesheet" type="text/css" th:href="|${basePath}/libs/jquery-easyui/themes/icon.css|">
+<link rel="stylesheet" type="text/css" th:href="|${basePath}/libs/jquery-easyui/themes/default/easyui.css|">
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" th:src="|${basePath}/libs/jsonview/jquery.jsonview.js|"></script>
+<script type="text/javascript" charset="utf8" th:src="|${basePath}/libs/jquery-easyui/jquery.easyui.min.js|"></script>
+
+<script type="text/javascript" th:inline="javascript">
+	var json = [[${threads}]];
+   	$(function() {
+	     $("#json").JSONView(json);
+	     // $("#json-collapsed").JSONView(json, { collapsed: true, nl2br: true, recursive_collapser: true });
+	     $('#collapse-btn').on('click', function() {
+	       $('#json').JSONView('collapse');
+	     });
+	     $('#expand-btn').on('click', function() {
+	       $('#json').JSONView('expand');
+	     });
+	     /* 
+	     $('#toggle-btn').on('click', function() {
+	       $('#json').JSONView('toggle');
+	     });
+	      */
+   });
+</script>
+
+</head>
+
+<body>
+	<div class="easyui-panel" title="Threads" style="margin-left: 10px; height:1024px;padding:10px;">
+	  	<button id="collapse-btn" class="easyui-menubutton" data-options="iconCls:'icon-remove'">折叠</button>
+	  	<button id="expand-btn" class="easyui-menubutton" data-options="iconCls:'icon-add'">展开</button>
+	  	<div id="json"></div>
+	</div>
+</body>
+</html>

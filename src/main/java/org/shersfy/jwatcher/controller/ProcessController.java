@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.shersfy.jwatcher.beans.Result;
 import org.shersfy.jwatcher.connector.JVMConnector;
+import org.shersfy.jwatcher.entity.JVMThreads;
 import org.shersfy.jwatcher.service.SystemInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,6 @@ public class ProcessController extends BaseController {
 	private SystemInfoService systemInfoService;
 	
 	@RequestMapping("/open")
-	@ResponseBody
 	public ModelAndView openRemoteConnector(String url){
 
 		ModelAndView mv = new ModelAndView("watcher");
@@ -74,7 +74,6 @@ public class ProcessController extends BaseController {
 	}
 	
 	@RequestMapping("/gc")
-	@ResponseBody
 	public ModelAndView getGCDetail(String url){
 
 		ModelAndView mv = new ModelAndView("watcher_gc");
@@ -107,4 +106,24 @@ public class ProcessController extends BaseController {
 		}
 		return res;
 	}
+	
+	@RequestMapping("/threads")
+    public ModelAndView threads(String url){
+	    ModelAndView mv = new ModelAndView("threads");
+	    try {
+            JVMConnector connector = systemInfoService.getConnector(url);
+            JVMThreads threads     = systemInfoService.getServerThreads(connector, true);
+            mv.addObject("url", url);
+            mv.addObject("threads", threads);
+        } catch (IOException e) {
+            LOGGER.error(url, e);
+            mv.setViewName("redirect:/error");
+            mv.addObject("status", FAIL);
+            mv.addObject("error", e.getMessage());
+            mv.addObject("message", e.getMessage());
+        }
+	    
+        return mv;
+    }
+	
 }

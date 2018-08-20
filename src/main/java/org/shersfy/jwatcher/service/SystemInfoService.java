@@ -380,6 +380,7 @@ public class SystemInfoService extends BaseService{
 			info.setThreadCount(bean.getThreadCount());
 			if(all){
 				info.setAllThreads(Arrays.asList(bean.dumpAllThreads(true, true)));
+				info.getAllThreads().sort((o1, o2)->Long.valueOf(o1.getThreadId()-o2.getThreadId()).intValue());
 			}
 		} catch (Exception e) {
 			LOGGER.error("", e);

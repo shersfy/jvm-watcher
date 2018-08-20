@@ -34,7 +34,7 @@
 					<li th:text="${opt}"></li>
 				</div>
 				<hr/>
-				<li><a th:href="${basePath}" target="_blank">查看JVM线程栈详情</a></li>
+				<li><a th:href="|${basePath}/process/threads?url=${url}|" target="_blank">查看JVM线程栈详情</a></li>
 				<li th:text="|当前活动线程数(包括守护线程和非守护线程)threadCount: ${threads.threadCount}|"></li>
 				<li th:text="|当前活动守护线程数daemonThreadCount: ${threads.daemonThreadCount}|"></li>
 				<li th:text="|峰值活动线程数(自从 Java 虚拟机启动或峰值重置以来峰值活动线程计数)peakThreadCount: ${threads.peakThreadCount}|"></li>
