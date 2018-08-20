@@ -36,10 +36,14 @@
 </head>
 
 <body>
-	<div class="easyui-panel" title="Threads" style="margin-left: 10px; height:1024px;padding:10px;">
-	  	<button id="collapse-btn" class="easyui-menubutton" data-options="iconCls:'icon-remove'">折叠</button>
-	  	<button id="expand-btn" class="easyui-menubutton" data-options="iconCls:'icon-add'">展开</button>
-	  	<div id="json"></div>
+	<div class="easyui-panel">
+		<div style="margin-left: 20px;">
+		  	<button id="expand-btn"   class="easyui-menubutton " data-options="iconCls:'icon-add'">展开</button>
+		  	<button id="collapse-btn" class="easyui-menubutton" data-options="iconCls:'icon-remove'">折叠</button>
+		</div>
+	</div>
+	<div class="easyui-panel" title="Threads" style="height:800px;padding:10px;">
+	  	<div id="json" style="margin-left: 20px;"></div>
 	</div>
 </body>
 </html>
