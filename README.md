@@ -23,12 +23,9 @@ service:jmx:rmi:///jndi/rmi://127.0.0.1:8899/jmxrmi
 5. 远程JVM监视
 ![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/romote-process.png)
 
-6. 远程JVM监视
-![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/romote-process.png)
-
-7. JVM GC监视
+6. JVM GC监视
 ![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/gc-detail-1.png)
 ![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/gc-detail-2.png)
 
-8. JVM 线程详情
+7. JVM 线程详情
 ![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/threads.png)
