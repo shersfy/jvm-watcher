@@ -25,7 +25,10 @@ service:jmx:rmi:///jndi/rmi://127.0.0.1:8899/jmxrmi
 
 6. JVM GC监视
 ![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/gc-detail-1.png)
+
 ![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/gc-detail-2.png)
+
+![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/gc-detail-3.png)
 
 7. JVM 线程详情
 ![Home](https://github.com/shersfy/jvm-watcher/blob/master/imgs/threads.png)
